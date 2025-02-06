@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My BETU</title>
+    <style>
+        body {
+            background: url('https://source.unsplash.com/1600x900/?birthday,celebration') no-repeat center center/cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            padding: 50px;
+            position: relative;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 20px;
+        }
+        button {
+            background: pink;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: red;
+            color: white;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        
+        /* Love Effects */
+        @keyframes floatingHearts {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-200px) scale(1.5); opacity: 0; }
+        }
+        .heart {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            font-size: 30px;
+            color: red;
+            animation: floatingHearts 4s linear infinite;
+        }
+        
+        /* Sparkle Effect */
+        @keyframes sparkle {
+            0% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.5; transform: scale(1); }
+        }
+        .message-box {
+            font-size: 22px;
+            color: yellow;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 0, 0, 0.5);
+            display: none;
+            animation: fadeIn 1.5s ease-in-out, sparkle 2s infinite;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday My Love ❤️</h1>
+        <p>Wishing you a day filled with love, joy, and happiness! 🎂🎁</p>
+        <button onclick="showMessage()">Click for a Surprise</button>
+        <p id="message" class="message-box">You are the most amazing person in my life, and I am so lucky to have you! 💖<br><br>  I hope this year brings you as much happiness and love as you bring into my life. May all your dreams come true, and may we create many more amazing memories together. 💑✨
+        <br> I just want to thank you for coming into my life and making it so beautiful. You fill my days with love, happiness, and endless joy, Every moment with you is a gift, and I feel so lucky to have you by my side.<br>Wishing you a day filled with laughter, love, and everything your heart desires. Happy Birthday, my betu! ❤️🎂✨</p>
+        <div class="image-container">
+            <img src="cake.jpg" alt="Birthday Cake">
+            
+        </div>
+    </div>
+    
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+        
+        function createHeart() {
+            let heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
